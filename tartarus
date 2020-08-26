@@ -11,4 +11,5 @@ In robots.txt, there are two things that stand out:
 Inside the /admin-dir, there are two files, one is a list of credentials and the other is a list of usernames.
 d4rckh is one of the names in the list.
 
-Next I ran a bruteforce ssh scan with the two provided files.
+Next I ran a bruteforce ssh and ftp scan with the two provided files.
+The ssh scan returned nothing.
