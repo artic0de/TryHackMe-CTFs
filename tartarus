@@ -1,0 +1,14 @@
+The first thing I noticed is it's looking for two flags, nothing else. So this will be much less hand-holding than the ones I've done before (which is great!)
+
+I ran the following nmap scan:
+nmap -sS -sV -O -Pn --script=vuln 10.10.254.178
+
+From that, I saw there was a webserver and the 'robots.txt' file was detected, so I hopped in a browser and took a peek at it.
+In robots.txt, there are two things that stand out:
+1. It says "Disallow : /admin-dir", which means we will definitely take a look.
+2. There's a line that says "I told d4rckh we should hide our things deep", so maybe d4rckh is a username.
+
+Inside the /admin-dir, there are two files, one is a list of credentials and the other is a list of usernames.
+d4rckh is one of the names in the list.
+
+Next I ran a bruteforce ssh scan with the two provided files.
